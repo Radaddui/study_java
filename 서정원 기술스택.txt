@@ -1,0 +1,216 @@
+***********************************
+*         나의 기술스택           *
+***********************************
+
+=================================================
+-            Development Environment            -
+=================================================
+
+1. Operating System
+	(1) Microsoft Windows 10 v22H2
+	(2) Microsoft Windows 11
+
+2. Middleware
+	(1) Relation Databases
+		- Oracle18c Release 3 Express Edition	 (on-premise)
+		- Oracle18c Release 3 Enterprise Edition (on-premise)
+		- Oracle19c Release 4 Enterprise Edition (on-premise)
+		- Oracle MySQL v8.0.33 (on-premise)
+		- H2 Database v2.2.224 (on-premise)
+		- Oracle Cloud ATP 19c Release 4 Enterprise Edition (Oracle Cloud Infrastructure, OCI)
+		- AWS RDS MySQL v8.0.33 (AWS Cloud Infrastructure)
+
+	(2) Web Application Server (WAS)
+		- Apache Tomcat v9.0.82
+		- Apache Tomcat v10.1.15
+		- Embedded Tomcat v10.1.13 integrated with Spring Boot v2.7.x/3.1.x
+
+3. Cloud Infrastructure (PASS - Platform AS a Service)
+	(1) Oracle Cloud ATP 19c Release 4 Enterprise Edition
+	(2) Oracle Cloud Compute (Image: Ubuntu v22.04-LTS)
+	(3) Amazon Web Service (AWS) RDS MySQL v8.0.33
+	
+
+4. Java Development Kit (JDK)
+	(1) Oracle JDK  8-LTS 	u341
+	(2) Oracle JDK 11-LTS	v11.0.6
+	(3) Oracle JDK 15-LTS	v15.0.2
+	(4) Oracle JDK 17-LTS	v17.0.8
+	(5) OpenJDK temurin11-JDK v11.0.20-101
+	(6) Amazon corretto17-jdk v17.0.9.8.1
+
+5. Package Manager
+	(1) Scoop v0.3.1 - Released at 2022-11-15 For Microsoft Windows v10/11
+	(2) Winget v1.6.2771 for Microsoft Windows v10/11
+
+
+6. Project Lifecycle Management Tool
+	(1) Apache Maven v3.9.5 integrated with Eclipse & Intellij IDEA
+	(2) Gradle v8.4 integrated with Eclipse & Intellij IDEA
+
+7. Integerated Development Environment (IDE)
+	(1) Back-end
+	   - Eclipse Java v2023-06 / 2023-09 for Java Standalone Application
+	   - Eclipse JEE  v2021-12 / 2022-03 / 2022-06 / 2023-06 / 2023-09 for Spring Framework v4/5/6
+	   - JetBrains Intellij IDEA Community Edition v2023.2.3-232.10072.27 for Spring Boot v2.7.x/3.1.x
+
+	(2) Front-end
+	   - Microsoft Visual Studio Code v1.83.1 for Windows 10/11
+		○ Rest Client v0.25.1 Extension
+		○ Live Preview v0.4.11 Extension
+		○ Live Server v5.7.9 Extension
+		○ Open In Browser v2.0.0 Extension
+		○ Oracle Developer Tool v21.6.0 Extension
+		○ MySQL Shell for VS Code v1.13.5 Extension
+		○ Postman v0.12.1 Extension
+		○ XML Red Hat v0.26.1 Extension
+		○ XML Format v1.1.3 Extension
+		○ XML to JSON v1.2.5 Extension
+		○ Thymeleaf v1.0.6 Extension
+		○ Remote Explorer v0.4.1 Extension
+		○ Remote - SSH v0.106.5 Extension
+		○ Git History v0.2.4 Extension
+		○ Font Awesome v1.3.1 Extension
+		○ AWS Toolkit v1.95.0 Extension
+	   - Sublime-text v4-4152 for Windows 10/11
+	   - vim v9.0 for Window 10/11
+	   - Web Developer Tools for Google Chrome / Mozilla FireFox / Microsoft Edge
+
+8. Test Tools
+	(1) Google Chrome Web Browser v118.0.5993.89 & Web Developer Tools 
+	(2) Mozllia Firefox Web Browser v118.0.2 & Web Developer Tools
+	(3) Microsoft Edge Web Browser v118.0.2 & Web Developer Tools
+	(4) Postman v10.19.7
+	(5) netcat v1.12
+	(6) Java Mission Control v8.3.1-05
+	(7) Microsoft Sysinternals v2023.10.18
+	(8) Rest Client v0.25.1 Extension for Visual Source Code
+	    Live Preview v0.4.11 Extension for Visual Source Code
+	    Live Server v5.7.9 Extension for Visual Source Code
+	    Open In Browser v2.0.0 Extension for Visual Source Code
+	    Oracle Developer Tool v21.6.0 Extension for Visual Source Code
+	    MySQL Shell for VS Code v1.13.5 Extension for Visual Source Code
+	    Postman v0.12.1 Extension for Visual Source Code
+
+9. Database Client (including Cloud Databases)
+	(1) Oracle SQL*PLUS 18cR3 / 19cR4
+	(2) Oracle SQLcl v23.3.0.270.1251 for Local Oracle DB and OCI - ATP
+	(3) Oracle Developer Tool v21.6.0 Extension in Visual Source Code for Local DB and OCI - ATP
+	(4) Oracle SQL*Developer v23.1.0 for Local DB and OCI - ATP
+	(5) Oracle Instant Client v19.20.0.0.0 for Local DB and OCI - ATP
+	(6) MySQL Workbench v8.0.34 for Local DB and AWS RDS MySQL v8.0.33
+	(7) JDBC Drivers
+		- Oracle JDBC Driver v21.9.0.0 for Local DB and OCI - ATP
+		- MySQL JDBC Driver v8.0.33 for Local and AWS RDS MySQL v8.0.33
+		- H2 JDBC Driver v2.1.214 for In-memory & Server H2 Database
+
+10. Version Control System (VCS)
+	(1) git v2.42.0.2
+	(2) gitignore v0.2018.07.25
+	(3) GitHub Desktop Client v3.3.4
+	(4) Git integrated with Eclipse & Intellj IDEA & Microsoft Visual Source Code
+	(5) GitHub CLI v2.37.0
+
+11. Terminal
+	(1) Microsoft Windows Powershell v7.3.8
+	(2) Microsoft Window Command Prompt v110.0.19045.3570
+	(3) Git Bash
+
+12. Etc.
+	(1) jconsole v17.0.9+8-LTS for JVM Analyze
+	(2) Java Mission Control v8.3.1-05 for JVM Analyze
+	(3) visualvm v2.1.7 for JVM Analyze
+	(4) Tcpview v4.17 for Network Analyze
+	(5) 7zip v22.01 for Compressor
+	(6) gow v0.8.0 for GNU Linux Commands on Windows
+
+
+=================================================
+-               Modeling Methods                -
+=================================================
+
+1. Object Modeling Method for OOP Polymorphism
+
+2. Relation Data Modeling
+	- Conceptual Modeling
+	- Logical Modeling
+	- Physial Modeling
+	- Peter Chen notation / IE notation
+	- Normalization: 1NF ~ BCNF
+
+3. UML (Unified Modeling Language)
+	- Requirement Specification
+	- Usecase Modeling
+	- Usecase Diagram
+	- Usecase Realization	
+
+
+=================================================
+-             Programming Languages             -
+=================================================
+
+1. Front-end
+	- HTML5 : HTML, CSS3, JavaScript ES5, ES6, XHR, AJax, Fetch API
+
+2. Back-end
+	- JAVA programming language v8 / v11 / v15 / v17
+		(1) Base (Variable, Operator, Reference Types, Annotation, Control)
+		(2) Exception Handling, Resource Handling
+		(3) Java I/O, Object Serialization/De-serialization, Network Programming
+		(4) Generic, Lambda Expression, Method Reference
+		(5) Java Collection Framework (JCF), Java Reflection API
+		(7) Multi-threading (ForkJoin Pool, ForkJoin Framework)
+		(8) OOP (Encapsulation, Inheritance, Polymorphism)
+		(9) Switch Expression, Record, Sealed Class
+
+	- SQL language (SQL-92, SQL-99, ANSI ISO/IEC-9075)
+		(1) DQL (2) DML (3) DDL (4) DCL (5) TCL
+		(6) Join (Oracle Join & ANSI Join) : Seta / Equi / Natural / Semi / Inner / Outer Join
+		(7) Subquery : Scalar, Inline View, Where, Correlated / Non-correlated Subqueries
+
+
+=================================================
+- Core Frameworks and libraries for development -
+=================================================
+
+1. Front-end
+	(1) HTML5 API ( HTML5, CSS3, Javascript ES5&6 )
+	(2) jQuery library v3.7.1, jQuery-migrate v3.4.1
+
+2. Back-end
+	(1) Spring Boot v2.7.x & 3.1.x
+		- Spring Data Source, MyBatis Data Source, Hibernate Data Source
+		- Spring JDBC, Spring Data JDBC
+		- Standard JPA, Spring Data JPA, Hibernate ORM Framework
+		  (Entity, Repository, Quary Method, Quary Annotation, QueryDSL)
+		- Spring Security
+		  (Authentication, Authorization, InMemory User, JDBC User, Security Event Listener)
+		- Spring MyBatis (Mapper Interface, Mapper XML, Mapper Interface + Mapper XML Complex type)
+		- Spring Quartz (CronTrigger, SimpleTrigger) for Job Scheduler
+		- Template Engine : JSP, Thymeleaf, Mustache
+	(2) Spring framework v6.0.3
+		- spring-context, spring-webmvc, spring-jdbc, spring-tx, spring-test, spring-security-core, aspectjrt, aspectjweaver
+		- DI(Dependency Injection), IoC (Inversion of Control), AOP(Aspect-Oriented Programming)
+		- Global(Distributed) Transaction Processing
+		- Front-Controll Pattern, VO/DTO Pattern, DAO Pattern
+		- Web Application Development based on Spring MVC
+		- RESTful Service Development
+		- Spring Interceptor for Session Tracking and Remember-Me
+	(3) Apache MyBatis SQL Mapper Framework v3.5.10
+	(4) Quartz Job Scheduler Framework v2.3.2
+	(5) JUnit Test Framework with Spring Boot v2.7.x/3.1.x & Spring Framework v6.x
+		- JUnit v4.13.2
+		- JUnit Jupyter API v5.10.0
+	(6) log4jdbc-log4j2 v1.16 for JDBC proxy driver
+	(7) HikariCP v5.0.1 for DataSource
+	(8) lombok v1.18.28 / 1.18.30
+	(9) Servlet API v4.0.1/5.0.0, JSP api v2.3.3, JSTL v1.2
+    (10) Apache log4j2 v2.18.0, Sring Boot Log4j2 
+    (11) Gson v2.10.1 / Jackson v2.15.3 / Jenson v1.6 / Json-io v4.14.2 for JSON serialize, de-serialize
+    (12) dom4j v2.1.4 for XML parser
+         JAXEN XPath Engine v1.2.0
+    (13) Apache httpclient v5.2.1 for HTTP client
+   		- 공공데이터포털 RESTful API 연동
+    (14) jackson-databind v2.15.3, jackson-dataformat-xml v2.15.3
+
+
