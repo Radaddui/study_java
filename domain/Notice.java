@@ -12,15 +12,15 @@ import java.util.Date;
 
 @Data
 @Log4j2
-@ToString(exclude = "fk_admins")
+@ToString(exclude = "fkAdmins")
 
 @Entity
 @Table(name = "notice")
 public class Notice {
 
     @Id
-    @GeneratedValue(generator = "notice_num")
-    @SequenceGenerator(name = "notice_num", initialValue = 1, allocationSize = 1)
+    @GeneratedValue(generator = "noticeNum")
+    @SequenceGenerator(name = "noticeNum", initialValue = 1, allocationSize = 1)
     private Long num;
 
     @Column(nullable = false)
@@ -52,13 +52,13 @@ public class Notice {
             fetch = FetchType.EAGER,
             optional = false
     )
-    @JoinColumn(name = "notice_writer", referencedColumnName = "admin_num", nullable = false)
-    private Admins fk_admins;
+    @JoinColumn(name = "noticeWriter", referencedColumnName = "adminNum", nullable = false)
+    private Admins fkAdmins;
 
-    public void setAdmins(Admins fk_admins){
-        log.trace("setAdmins({}) Invoked.", fk_admins);
-        this.fk_admins = fk_admins;
-        this.fk_admins.getNoticeList_Admins().add(this);
+    public void setAdmins(Admins fkAdmins){
+        log.trace("setAdmins({}) Invoked.", fkAdmins);
+        this.fkAdmins = fkAdmins;
+        this.fkAdmins.getNoticeListAdmins().add(this);
     } // setAdmins
 
 

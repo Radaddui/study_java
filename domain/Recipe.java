@@ -13,7 +13,7 @@ import java.util.Date;
 import java.util.List;
 
 @Data
-@ToString(exclude = {"fk_users", "fk_Categories", "commentsList_Recipe", "ReportList_Recipe"})
+@ToString(exclude = {"fkUsers", "fkCategories", "commentsListRecipe", "ReportListRecipe"})
 @Log4j2
 
 @Entity
@@ -21,13 +21,13 @@ import java.util.List;
 public class Recipe {
 
     @Id
-    @Column(name = "recipe_num")
-    @GeneratedValue(generator = "recipe_num")
-    @SequenceGenerator(name = "recipe_num", initialValue = 1, allocationSize = 1)
+    @Column(name = "recipeNum")
+    @GeneratedValue(generator = "recipeNum")
+    @SequenceGenerator(name = "recipeNum", initialValue = 1, allocationSize = 1)
     private Long num;
 
     @Transient
-    private Long wirter;
+    private Long writer;
 
 
     @Column(nullable = false)
@@ -49,7 +49,7 @@ public class Recipe {
     private Categories Categories;
 
     @UpdateTimestamp
-    @Column(updatable = true, insertable = false)
+    @Column(updatable = true, insertable = true)
     private Date processedDate;
 
     @Enumerated(EnumType.STRING)
@@ -58,6 +58,8 @@ public class Recipe {
     @Column
     private Integer enabled = 1;
 
+
+    private Integer cnt = 0;
 
 
 
@@ -70,17 +72,17 @@ public class Recipe {
             optional = false
     )
     @JoinColumn(
-            name = "users_num",
+            name = "usersNum",
             nullable = false,
-            referencedColumnName = "users_num"
+            referencedColumnName = "usersNum"
     )
-    private Users fk_users;
+    private Users fkUsers;
 
-    public void setUsers(Users fk_users){
-        log.trace("Recipe_setUsers({}) Invoked.", fk_users);
-        this.fk_users = fk_users;
+    public void setFkUsers(Users fkUsers){
+        log.trace("Recipe_setFkUsers({}) Invoked.", fkUsers);
+        this.fkUsers = fkUsers;
 
-        this.fk_users.getRecipeList_Users().add(this);
+        this.fkUsers.getRecipeListUsers().add(this);
     }
 
 
@@ -90,19 +92,15 @@ public class Recipe {
             optional = false
     )
     @JoinColumn(
-            name = "Categories_seq",
+            name = "CategoriesSeq",
             nullable = true,
-            referencedColumnName = "Categories_seq"
+            referencedColumnName = "CategoriesSeq"
     )
-    private Categories fk_Categories;
+    private Categories fkCategories;
 
-    public void setCategories(List<Categories> fk_categories) {
-        log.trace("setCategories({}) Invoked.", fk_categories);
-        this.fk_Categories = fk_Categories;
-
-        for (Categories category : fk_categories) {
-            category.getRecipeList_Categories().add(this);
-        }
+    public void setFkCategories(Categories fkCategories) {
+        log.trace("setFkCategories({}) Invoked.", fkCategories);
+        this.fkCategories = fkCategories;
     } // setCategories
 
 //    ====================================================================
@@ -111,18 +109,18 @@ public class Recipe {
             targetEntity = Comments.class,
             fetch = FetchType.EAGER,
             cascade = CascadeType.ALL,
-            mappedBy = "fk_recipe"
+            mappedBy = "fkRecipe"
     )
-    private List<Comments> commentsList_Recipe = new ArrayList<>();
+    private List<Comments> commentsListRecipe = new ArrayList<>();
 
 
     @OneToMany(
             targetEntity = Report.class,
             fetch = FetchType.EAGER,
             cascade = CascadeType.ALL,
-            mappedBy = "fk_recipe"
+            mappedBy = "fkRecipe"
     )
-    private List<Report> ReportList_Recipe = new ArrayList<>();
+    private List<Report> ReportListRecipe = new ArrayList<>();
 
 
 

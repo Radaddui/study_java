@@ -11,16 +11,16 @@ import java.util.Date;
 
 @Log4j2
 @Data
-@ToString(exclude = {"fk_users","fk_recipe","fk_comments"})
+@ToString(exclude = {"fkUsers","fkRecipe","fkComments"})
 
 @Entity
 @Table(name = "report")
 public class Report {
 
     @Id
-    @Column(name = "report_num")
-    @GeneratedValue(generator = "report_num")
-    @SequenceGenerator(name = "report_num", initialValue = 1, allocationSize = 1)
+    @Column(name = "reportNum")
+    @GeneratedValue(generator = "reportNum")
+    @SequenceGenerator(name = "reportNum", initialValue = 1, allocationSize = 1)
     private Long num;
 
     @Transient
@@ -54,17 +54,17 @@ public class Report {
             optional = false
     )
     @JoinColumn(
-            name = "users_num",
+            name = "usersNum",
             nullable = false,
-            referencedColumnName = "users_num"
+            referencedColumnName = "usersNum"
     )
-    private Users fk_users;
+    private Users fkUsers;
 
-    public void setUsers(Users fk_users){
-        log.trace("Report_setUsers({}) Invoked.", fk_users);
-        this.fk_users = fk_users;
+    public void setUsers(Users fkUsers){
+        log.trace("Report_setUsers({}) Invoked.", fkUsers);
+        this.fkUsers = fkUsers;
 
-        this.fk_users.getReportList_Users().add(this);
+        this.fkUsers.getReportListUsers().add(this);
     } // setUsers
 
 
@@ -76,17 +76,17 @@ public class Report {
             optional = false
     )
     @JoinColumn(
-            name = "recipe_num",
+            name = "recipeNum",
             nullable = false,
-            referencedColumnName = "recipe_num"
+            referencedColumnName = "recipeNum"
     )
-    private Recipe fk_recipe;
+    private Recipe fkRecipe;
 
-    public void setRecipe(Recipe fk_recipe){
-        log.trace("Report_setRecipe({}) Invoked.", fk_recipe);
-        this.fk_recipe = fk_recipe;
+    public void setRecipe(Recipe fkRecipe){
+        log.trace("Report_setRecipe({}) Invoked.", fkRecipe);
+        this.fkRecipe = fkRecipe;
 
-        this.fk_recipe.getReportList_Recipe().add(this);
+        this.fkRecipe.getReportListRecipe().add(this);
     } // setRecipe
 
 
@@ -97,17 +97,17 @@ public class Report {
             optional = false
     )
     @JoinColumn(
-            name = "comments_num",
+            name = "commentsNum",
             nullable = false,
-            referencedColumnName = "comments_num"
+            referencedColumnName = "commentsNum"
     )
-    private Comments fk_comments;
+    private Comments fkComments;
 
-    public void setComments(Comments fk_comments){
-        log.trace("Comment_setRecipe({}) Invoked.", fk_comments);
-        this.fk_comments = fk_comments;
+    public void setComments(Comments fkComments){
+        log.trace("Comment_setRecipe({}) Invoked.", fkComments);
+        this.fkComments = fkComments;
 
-        this.fk_comments.getReportList_Comments().add(this);
+        this.fkComments.getReportListComments().add(this);
     } // setRecipe
 
 

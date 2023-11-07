@@ -10,20 +10,20 @@ import java.util.List;
 
 
 @Data
-@ToString(exclude = "recipeList_Categories")
+@ToString(exclude = "recipeListCategories")
 
 @Table(name = "Categories")
 @Entity
 public class Categories {
     @Id
-    @Column(name = "Categories_seq")
+    @Column(name = "CategoriesSeq")
     @SequenceGenerator(
-            name = "Categories_generator",
-            sequenceName = "Categories_seq",
+            name = "CategoriesGenerator",
+            sequenceName = "CategoriesSeq",
             initialValue = 1,
             allocationSize = 1)
     @GeneratedValue(
-            generator =  "Categories_generator",
+            generator =  "CategoriesGenerator",
             strategy = GenerationType.SEQUENCE)
     private Integer num;
 
@@ -36,8 +36,8 @@ public class Categories {
             targetEntity = Recipe.class,
             cascade = CascadeType.ALL,
             fetch = FetchType.EAGER,
-            mappedBy = "fk_Categories"
+            mappedBy = "fkCategories"
     )
-    private List<Recipe> recipeList_Categories = new ArrayList<>();
+    private List<Recipe> recipeListCategories = new ArrayList<>();
 
 } // end class

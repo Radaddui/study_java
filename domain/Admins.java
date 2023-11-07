@@ -13,16 +13,16 @@ import java.util.List;
 
 @Data
 
-@ToString(exclude = "noticeList_Admins")
+@ToString(exclude = "noticeListAdmins")
 
 @Table(name = "admins")
 @Entity
 public class Admins {
 
     @Id
-    @Column(name = "admin_num")
-    @GeneratedValue(generator = "admin_num")
-    @SequenceGenerator(name = "admin_num", initialValue = 1, allocationSize = 1)
+    @Column(name = "adminNum")
+    @GeneratedValue(generator = "adminNum")
+    @SequenceGenerator(name = "adminNum", initialValue = 1, allocationSize = 1)
     private Long num;
 
     @Column(nullable = false, unique = true)
@@ -31,7 +31,7 @@ public class Admins {
     @Column(nullable = false)
     private String password;
 
-    @Column(nullable = false, unique = true, name = "uk_nickname")
+    @Column(nullable = false, unique = true, name = "ukNickname")
     private String nickName;
 
     @Column(nullable = false, updatable = false)
@@ -52,9 +52,9 @@ public class Admins {
             targetEntity = Notice.class,
             cascade = CascadeType.ALL,
             fetch = FetchType.EAGER,
-            mappedBy = "fk_admins"
+            mappedBy = "fkAdmins"
     )
-    private List<Notice> noticeList_Admins = new ArrayList<>();
+    private List<Notice> noticeListAdmins = new ArrayList<>();
 
 
 

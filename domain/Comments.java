@@ -13,15 +13,15 @@ import java.util.List;
 
 @Data
 @Log4j2
-@ToString(exclude = {"fk_users","fk_recipe", "ReportList_Comments"})
+@ToString(exclude = {"fkUsers","fkRecipe", "ReportListComments"})
 
 @Entity
 @Table(name = "comments")
 public class Comments {
     @Id
-    @Column(name = "comments_num")
-    @GeneratedValue(generator = "comments_num")
-    @SequenceGenerator(name = "comments_num", initialValue = 1, allocationSize = 1)
+    @Column(name = "commentsNum")
+    @GeneratedValue(generator = "commentsNum")
+    @SequenceGenerator(name = "commentsNum", initialValue = 1, allocationSize = 1)
     private Long num;
 
     @Transient
@@ -38,14 +38,14 @@ public class Comments {
     private Date createDate;
 
     @Enumerated(EnumType.STRING)
-    private ReportStatus report_status = ReportStatus.REPORT_NOTRECEIVED;
+    private ReportStatus reportStatus = ReportStatus.REPORT_NOTRECEIVED;
 
     @Column(nullable = false)
     @UpdateTimestamp
-    private Date report_uploaded;
+    private Date reportUploaded;
 
     @UpdateTimestamp
-    private Date report_processed;
+    private Date reportProcessed;
 
     @Column(nullable = false)
     private Integer enabled = 1;
@@ -56,17 +56,17 @@ public class Comments {
             optional = false
     )
     @JoinColumn(
-            name = "users_num",
+            name = "usersNum",
             nullable = false,
-            referencedColumnName = "users_num"
+            referencedColumnName = "usersNum"
     )
-    private Users fk_users;
+    private Users fkUsers;
 
-    public void setUsers(Users fk_users){
-        log.trace("Comment_setUsers({}) Invoked.", fk_users);
-        this.fk_users = fk_users;
+    public void setUsers(Users fkUsers){
+        log.trace("Comment_setUsers({}) Invoked.", fkUsers);
+        this.fkUsers = fkUsers;
 
-        this.fk_users.getCommentsList_Users().add(this);
+        this.fkUsers.getCommentsListUsers().add(this);
     } // setUsers
 
 
@@ -77,33 +77,29 @@ public class Comments {
             optional = false
     )
     @JoinColumn(
-            name = "recipe_num",
+            name = "recipeNum",
             nullable = false,
-            referencedColumnName = "recipe_num"
+            referencedColumnName = "recipeNum"
     )
-    private Recipe fk_recipe;
+    private Recipe fkRecipe;
 
 
 
 
-    public void setRecipe(Recipe fk_recipe){
-        log.trace("Comment_setRecipe({}) Invoked.", fk_recipe);
-        this.fk_recipe = fk_recipe;
+    public void setRecipe(Recipe fkRecipe){
+        log.trace("Comment_setRecipe({}) Invoked.", fkRecipe);
+        this.fkRecipe = fkRecipe;
 
-        this.fk_recipe.getCommentsList_Recipe().add(this);
+        this.fkRecipe.getCommentsListRecipe().add(this);
     } // setRecipe
 
     @OneToMany(
             targetEntity = Report.class,
             fetch = FetchType.EAGER,
             cascade = CascadeType.ALL,
-            mappedBy = "fk_comments"
+            mappedBy = "fkComments"
     )
-    private List<Report> ReportList_Comments = new ArrayList<>();
-
-
-
-
+    private List<Report> ReportListComments = new ArrayList<>();
 
 
 } // end class
