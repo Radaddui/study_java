@@ -29,7 +29,21 @@ public class LoginController {
     String loginInfo(){
         log.trace("loginSuccess() Invoked.");
 
-        return "/main";
+        return "main";
+    }
+
+    @GetMapping("/admin")
+    public String adminLogin(){
+        log.trace("adminLogin() invoked.");
+
+        return "login/admin";
+    } // adminLogin
+
+    @PostMapping("/admin")
+    public String adminLoginSuccess(){
+        log.trace("adminLoginSuccess() invoked.");
+
+        return "admin/main";
     }
 
 } // end class

@@ -47,7 +47,7 @@ public class MainController {
 
 //    ====================================================================================================
 //              여기서 Category 매핑합니다. 카테고리 초기화됐으면 실행시 이거 한번 URI 호출 하면 카테고리에 값이 들어갑니다.!
-//
+////
 //    @GetMapping("/asjdlkasjdlk")
 //    void createCa(){
 //        log.trace("createCa() Invoked.");
